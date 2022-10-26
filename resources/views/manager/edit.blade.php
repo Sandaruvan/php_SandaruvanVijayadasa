@@ -33,6 +33,15 @@
                         {{ session('success') }}
                     </div>
                 @endif
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
             <form method="post" id="create_form" action="{{ route('update', $member->id) }}"
                   class="g-3 needs-validation" novalidate>
