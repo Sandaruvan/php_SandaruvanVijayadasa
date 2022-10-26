@@ -25,7 +25,7 @@ class SalesTeam extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|string|email',
+            'email' => 'required|string|email|unique:sales_teams,email,'.$this->id,
             'telephoneNo' => 'required|string',
             'joinedDate' => 'required',
             'currentRoute' => 'required|string',
